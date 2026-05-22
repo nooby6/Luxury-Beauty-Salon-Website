@@ -23,8 +23,8 @@ export function Booking() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const message = `Hello! I'd like to book an appointment at Nairobi Glam Lounge.
-    
+    const message = `Hello! I'd like to book an appointment at Pit Glam.
+
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
@@ -57,47 +57,74 @@ Special Requests: ${formData.requests || 'None'}`;
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg mb-6"
+            >
               <CalendarIcon className="w-4 h-4 text-[#C75C6F]" />
               <span className="font-['Inter'] text-sm font-medium text-gray-700">Book Your Visit</span>
-            </div>
+            </motion.div>
 
-            <h2 className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-6"
+            >
               <span className="bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-                Schedule Your
+                Book Your
               </span>
               <br />
-              <span className="text-gray-800">Beauty Experience</span>
-            </h2>
+              <span className="text-gray-800">Appointment</span>
+            </motion.h2>
 
-            <p className="font-['Inter'] text-lg text-gray-600 mb-8">
-              Reserve your spot at Nairobi's premier beauty destination. Our expert team is ready to pamper you with world-class treatments.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="font-['Inter'] text-lg text-gray-600 mb-8"
+            >
+              Reserve your spot for beautiful lashes and brows. Our expert artists are ready to enhance your natural beauty.
+            </motion.p>
 
             {/* Features */}
             <div className="space-y-4">
               {[
                 'Flexible appointment times',
-                'Expert beauty professionals',
-                'Premium product selection',
-                'Luxury salon environment',
+                'Certified lash & brow specialists',
+                'Premium, hypoallergenic products',
+                'Luxurious, sanitized environment',
               ].map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.5 + (index * 0.1),
+                    type: "spring",
+                    stiffness: 100
+                  }}
                   className="flex items-center gap-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E8A9A9] to-[#D4A373] flex items-center justify-center flex-shrink-0">
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E8A9A9] to-[#D4A373] flex items-center justify-center flex-shrink-0"
+                  >
                     <span className="text-white text-xs">✓</span>
-                  </div>
+                  </motion.div>
                   <span className="font-['Inter'] text-gray-700">{feature}</span>
                 </motion.div>
               ))}
@@ -123,12 +150,16 @@ Special Requests: ${formData.requests || 'None'}`;
 
           {/* Right Side - Booking Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 60, delay: 0.2 }}
           >
-            <div className="bg-white/90 backdrop-blur-xl rounded-[32px] p-8 shadow-2xl border border-white/50">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/90 backdrop-blur-xl rounded-[32px] p-8 shadow-2xl border border-white/50"
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Full Name */}
                 <div>
@@ -192,11 +223,13 @@ Special Requests: ${formData.requests || 'None'}`;
                       <SelectValue placeholder="Choose a service" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Signature Glow Facial">Signature Glow Facial - KSh 4,500</SelectItem>
-                      <SelectItem value="Gel Manicure & Nail Art">Gel Manicure & Nail Art - KSh 3,000</SelectItem>
-                      <SelectItem value="Luxury Hair Styling">Luxury Hair Styling - KSh 5,500</SelectItem>
-                      <SelectItem value="Bridal Glam Package">Bridal Glam Package - KSh 12,000</SelectItem>
-                      <SelectItem value="Custom Package">Custom Package</SelectItem>
+                      <SelectItem value="Classic Lash Extensions">Classic Lash Extensions</SelectItem>
+                      <SelectItem value="Volume Lash Extensions">Volume Lash Extensions</SelectItem>
+                      <SelectItem value="Hybrid Lash Extensions">Hybrid Lash Extensions</SelectItem>
+                      <SelectItem value="Lash Lift & Tint">Lash Lift & Tint</SelectItem>
+                      <SelectItem value="Eyebrow Shaping & Tinting">Eyebrow Shaping & Tinting</SelectItem>
+                      <SelectItem value="Brow Lamination">Brow Lamination</SelectItem>
+                      <SelectItem value="Lash Refill">Lash Refill</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -266,7 +299,7 @@ Special Requests: ${formData.requests || 'None'}`;
                   * This will open WhatsApp to confirm your booking
                 </p>
               </form>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

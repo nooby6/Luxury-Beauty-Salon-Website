@@ -39,9 +39,9 @@ export function Navbar() {
             </div>
             <div>
               <h2 className="font-['Playfair_Display'] font-bold text-xl bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-                Nairobi Glam
+                Pit Glam
               </h2>
-              <p className="text-xs text-gray-600 font-['Inter'] -mt-1">Lounge</p>
+              <p className="text-xs text-gray-600 font-['Inter'] -mt-1">Brows & Lashes</p>
             </div>
           </div>
 

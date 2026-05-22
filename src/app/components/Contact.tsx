@@ -14,14 +14,14 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      detail: 'hello@nairobiglam.co.ke',
-      action: 'mailto:hello@nairobiglam.co.ke',
+      detail: 'hello@pitglam.co.ke',
+      action: 'mailto:hello@pitglam.co.ke',
       gradient: 'from-[#D4A373] to-[#E8A9A9]',
     },
     {
       icon: MapPin,
       title: 'Location',
-      detail: 'Westlands, Nairobi, Kenya',
+      detail: 'Nairobi, Kenya',
       action: 'https://maps.google.com',
       gradient: 'from-[#C75C6F] to-[#D4A373]',
     },
@@ -36,26 +36,44 @@ export function Contact() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg mb-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg mb-4"
+          >
             <MessageCircle className="w-4 h-4 text-[#C75C6F]" />
             <span className="font-['Inter'] text-sm font-medium text-gray-700">Get In Touch</span>
-          </div>
-          <h2 className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-4">
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-4"
+          >
             <span className="bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
               Contact Us
             </span>
             <br />
-            <span className="text-gray-800">We'd Love to Hear From You</span>
-          </h2>
-          <p className="font-['Inter'] text-lg text-gray-600 max-w-2xl mx-auto">
-            Reach out to us for bookings, inquiries, or just to say hello
-          </p>
+            <span className="text-gray-800">Let's Connect</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="font-['Inter'] text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Reach out for bookings, consultations, or questions about our services
+          </motion.p>
         </motion.div>
 
         {/* Contact Cards */}
@@ -66,11 +84,16 @@ export function Contact() {
               href={contact.action}
               target={contact.action.startsWith('http') ? '_blank' : undefined}
               rel={contact.action.startsWith('http') ? 'noopener noreferrer' : undefined}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: 0.5 + (index * 0.15),
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ y: -12, scale: 1.05 }}
               className="group block"
             >
               <div className="bg-white/90 backdrop-blur-xl rounded-[28px] p-8 shadow-xl hover:shadow-2xl transition-all border border-white/50 text-center">

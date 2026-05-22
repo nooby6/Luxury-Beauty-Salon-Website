@@ -3,19 +3,19 @@ import { useEffect } from 'react';
 export function SEO() {
   useEffect(() => {
     // Set document title
-    document.title = 'Nairobi Glam Lounge | Premium Beauty Salon in Nairobi, Kenya';
+    document.title = 'Pit Glam | Premium Brows & Lashes in Nairobi, Kenya';
 
     // Set meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         'content',
-        'Nairobi Glam Lounge - Luxury beauty experiences in Nairobi. Expert makeup, hair styling, nails, and bridal packages for the modern African woman. Book your appointment today!'
+        'Pit Glam - Because your Brows & Lashes Matter. Expert lash extensions, brow shaping, lash lifts, and brow lamination in Nairobi. Premium, hypoallergenic products. Book your appointment today!'
       );
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Nairobi Glam Lounge - Luxury beauty experiences in Nairobi. Expert makeup, hair styling, nails, and bridal packages for the modern African woman. Book your appointment today!';
+      meta.content = 'Pit Glam - Because your Brows & Lashes Matter. Expert lash extensions, brow shaping, lash lifts, and brow lamination in Nairobi. Premium, hypoallergenic products. Book your appointment today!';
       document.head.appendChild(meta);
     }
 
@@ -24,12 +24,12 @@ export function SEO() {
     if (metaKeywords) {
       metaKeywords.setAttribute(
         'content',
-        'beauty salon Nairobi, makeup artist Kenya, hair salon Westlands, bridal makeup Nairobi, nail art Kenya, luxury beauty Kenya, African beauty, Nairobi Glam Lounge'
+        'lash extensions Nairobi, brow shaping Kenya, lash lift Nairobi, volume lashes Kenya, classic lashes Nairobi, brow lamination Kenya, eyebrow tinting Nairobi, lash artist Kenya, Pit Glam, best lashes Nairobi'
       );
     } else {
       const meta = document.createElement('meta');
       meta.name = 'keywords';
-      meta.content = 'beauty salon Nairobi, makeup artist Kenya, hair salon Westlands, bridal makeup Nairobi, nail art Kenya, luxury beauty Kenya, African beauty, Nairobi Glam Lounge';
+      meta.content = 'lash extensions Nairobi, brow shaping Kenya, lash lift Nairobi, volume lashes Kenya, classic lashes Nairobi, brow lamination Kenya, eyebrow tinting Nairobi, lash artist Kenya, Pit Glam, best lashes Nairobi';
       document.head.appendChild(meta);
     }
 

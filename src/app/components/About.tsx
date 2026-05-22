@@ -1,28 +1,28 @@
-import { Award, Users, Calendar, Sparkles } from 'lucide-react';
+import { Award, Users, Calendar, Sparkles, Eye } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface AboutProps {
-  salonImage: string;
+  aboutImage: string;
 }
 
-export function About({ salonImage }: AboutProps) {
+export function About({ aboutImage }: AboutProps) {
   const stats = [
     {
       icon: Calendar,
-      value: '8+',
+      value: '5+',
       label: 'Years Experience',
       gradient: 'from-[#E8A9A9] to-[#F9D5D3]',
     },
     {
       icon: Users,
-      value: '10k+',
+      value: '2k+',
       label: 'Happy Clients',
       gradient: 'from-[#D4A373] to-[#E8A9A9]',
     },
     {
-      icon: Award,
-      value: '500+',
-      label: 'Bridal Sessions',
+      icon: Eye,
+      value: '100%',
+      label: 'Satisfaction',
       gradient: 'from-[#C75C6F] to-[#D4A373]',
     },
   ];
@@ -37,10 +37,10 @@ export function About({ salonImage }: AboutProps) {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
             className="relative"
           >
             <div className="relative">
@@ -48,6 +48,7 @@ export function About({ salonImage }: AboutProps) {
               <motion.div
                 animate={{
                   rotate: [0, 5, 0],
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
                   duration: 6,
@@ -59,6 +60,7 @@ export function About({ salonImage }: AboutProps) {
               <motion.div
                 animate={{
                   rotate: [0, -5, 0],
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
                   duration: 8,
@@ -67,12 +69,12 @@ export function About({ salonImage }: AboutProps) {
                 }}
                 className="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-tr from-[#D4A373] to-[#C75C6F] rounded-[28px] opacity-40 blur-xl"
               />
-              
+
               {/* Main Image */}
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
                 <img
-                  src={salonImage}
-                  alt="Nairobi Glam Lounge Interior"
+                  src={aboutImage}
+                  alt="Pit Glam Lash Extensions Work"
                   className="w-full h-[500px] object-cover"
                 />
                 {/* Gradient Overlay */}
@@ -114,50 +116,83 @@ export function About({ salonImage }: AboutProps) {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg mb-6"
+            >
               <Sparkles className="w-4 h-4 text-[#C75C6F]" />
               <span className="font-['Inter'] text-sm font-medium text-gray-700">About Us</span>
-            </div>
+            </motion.div>
 
-            <h2 className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-6"
+            >
               <span className="bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-                Nairobi's Premier
+                Where Eyes
               </span>
               <br />
-              <span className="text-gray-800">Beauty Destination</span>
-            </h2>
+              <span className="text-gray-800">Come Alive</span>
+            </motion.h2>
 
-            <p className="font-['Inter'] text-lg text-gray-700 mb-6 leading-relaxed">
-              At Nairobi Glam Lounge, we believe every woman deserves to feel beautiful and confident. Our team of expert beauty professionals brings over 8 years of experience in delivering world-class makeup, hair, and nail services.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="font-['Inter'] text-lg text-gray-700 mb-6 leading-relaxed"
+            >
+              At Pit Glam, we believe that your brows and lashes are more than just features – they're the frame to your most beautiful asset: your eyes. Our expert lash and brow artists bring over 5 years of specialized experience in creating stunning, natural-looking enhancements.
+            </motion.p>
 
-            <p className="font-['Inter'] text-lg text-gray-700 mb-8 leading-relaxed">
-              We specialize in creating stunning transformations for modern African women, using premium products and techniques that celebrate your natural beauty while enhancing your unique style.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="font-['Inter'] text-lg text-gray-700 mb-8 leading-relaxed"
+            >
+              We specialize in precision lash extensions, expert brow shaping, and transformative treatments that enhance your natural beauty. Using only premium products and the latest techniques, we ensure every client leaves feeling confident and beautiful.
+            </motion.p>
 
             {/* Feature List */}
             <div className="space-y-4">
               {[
-                'Expert beauty professionals with international training',
-                'Premium product selection from top global brands',
-                'Luxurious and hygienic salon environment',
-                'Personalized beauty consultations',
-                'Flexible scheduling to fit your lifestyle',
+                'Certified lash and brow specialists with advanced training',
+                'Premium, hypoallergenic products safe for sensitive eyes',
+                'Luxurious, sanitized studio environment',
+                'Personalized consultations for your unique eye shape',
+                'Flexible appointment times to suit your schedule',
               ].map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.7 + (index * 0.1),
+                    type: "spring",
+                    stiffness: 100
+                  }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E8A9A9] to-[#D4A373] flex items-center justify-center flex-shrink-0 mt-1">
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-6 h-6 rounded-full bg-gradient-to-br from-[#E8A9A9] to-[#D4A373] flex items-center justify-center flex-shrink-0 mt-1"
+                  >
                     <span className="text-white text-xs">✓</span>
-                  </div>
+                  </motion.div>
                   <span className="font-['Inter'] text-gray-700">{feature}</span>
                 </motion.div>
               ))}
@@ -165,14 +200,15 @@ export function About({ salonImage }: AboutProps) {
 
             {/* Vision Statement */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              whileHover={{ scale: 1.02 }}
               className="mt-8 p-6 rounded-[24px] bg-gradient-to-br from-[#F9D5D3]/30 to-[#F6E6DA]/30 border border-[#E8A9A9]/20"
             >
               <p className="font-['Playfair_Display'] text-xl text-gray-800 italic">
-                "Our mission is to empower every woman who walks through our doors to feel confident, beautiful, and ready to conquer the world."
+                "Because your Brows & Lashes Matter – we're dedicated to enhancing your natural beauty and helping you feel confident, one lash at a time."
               </p>
             </motion.div>
           </motion.div>

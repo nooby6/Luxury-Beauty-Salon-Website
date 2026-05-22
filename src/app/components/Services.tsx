@@ -1,4 +1,4 @@
-import { Sparkles, Clock, ArrowRight } from 'lucide-react';
+import { Sparkles, Clock, ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
 
@@ -8,41 +8,57 @@ interface Service {
   title: string;
   description: string;
   duration: string;
-  price: string;
+  whatsappMessage: string;
 }
 
 const services: Service[] = [
   {
     id: 1,
-    icon: '✨',
-    title: 'Signature Glow Facial',
-    description: 'Luxurious facial treatment with premium skincare products for radiant, glowing skin',
-    duration: '60 min',
-    price: 'KSh 4,500',
+    icon: '👁️',
+    title: 'Classic Lash Extensions',
+    description: 'Beautiful, natural-looking lash extensions for everyday elegance',
+    duration: '90-120 min',
+    whatsappMessage: 'Hi! I want to book Classic Lash Extensions',
   },
   {
     id: 2,
-    icon: '💅',
-    title: 'Gel Manicure & Nail Art',
-    description: 'Professional gel manicure with intricate nail art designs',
-    duration: '90 min',
-    price: 'KSh 3,000',
+    icon: '✨',
+    title: 'Volume Lash Extensions',
+    description: 'Dramatic, full volume lashes for that glamorous look',
+    duration: '120-150 min',
+    whatsappMessage: 'Hi! I want to book Volume Lash Extensions',
   },
   {
     id: 3,
-    icon: '💇‍♀️',
-    title: 'Luxury Hair Styling',
-    description: 'Expert hair styling for any occasion with premium products',
-    duration: '120 min',
-    price: 'KSh 5,500',
+    icon: '🎨',
+    title: 'Eyebrow Shaping & Tinting',
+    description: 'Expert brow shaping and tinting to frame your face perfectly',
+    duration: '45-60 min',
+    whatsappMessage: 'Hi! I want to book Eyebrow Shaping & Tinting',
   },
   {
     id: 4,
-    icon: '👰',
-    title: 'Bridal Glam Package',
-    description: 'Complete bridal makeover including makeup, hair, and nails',
-    duration: '4 hours',
-    price: 'KSh 12,000',
+    icon: '💎',
+    title: 'Hybrid Lashes',
+    description: 'Perfect blend of classic and volume for a textured, fluffy look',
+    duration: '120-150 min',
+    whatsappMessage: 'Hi! I want to book Hybrid Lashes',
+  },
+  {
+    id: 5,
+    icon: '🌟',
+    title: 'Lash Lift & Tint',
+    description: 'Natural lash enhancement with a beautiful lift and rich tint',
+    duration: '60-75 min',
+    whatsappMessage: 'Hi! I want to book Lash Lift & Tint',
+  },
+  {
+    id: 6,
+    icon: '🎯',
+    title: 'Brow Lamination',
+    description: 'Achieve fuller, fluffier brows with our lamination treatment',
+    duration: '45-60 min',
+    whatsappMessage: 'Hi! I want to book Brow Lamination',
   },
 ];
 
@@ -75,26 +91,31 @@ export function Services() {
           </div>
           <h2 className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-4">
             <span className="bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-              Luxury Beauty
+              Brows & Lashes
             </span>
             <br />
-            <span className="text-gray-800">Experiences</span>
+            <span className="text-gray-800">Perfected</span>
           </h2>
           <p className="font-['Inter'] text-lg text-gray-600 max-w-2xl mx-auto">
-            Indulge in our curated selection of premium beauty treatments
+            Expert treatments designed to enhance your natural beauty
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ y: -12, scale: 1.03 }}
               className="group relative"
             >
               <div className="relative h-full bg-white/80 backdrop-blur-xl rounded-[28px] p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50 overflow-hidden">
@@ -105,9 +126,13 @@ export function Services() {
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E8A9A9] to-[#D4A373] flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all">
+                  <motion.div
+                    whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E8A9A9] to-[#D4A373] flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all"
+                  >
                     <span className="text-3xl">{service.icon}</span>
-                  </div>
+                  </motion.div>
 
                   {/* Title */}
                   <h3 className="font-['Playfair_Display'] font-bold text-xl text-gray-800 mb-2">
@@ -115,27 +140,23 @@ export function Services() {
                   </h3>
 
                   {/* Description */}
-                  <p className="font-['Inter'] text-sm text-gray-600 mb-4 line-clamp-2">
+                  <p className="font-['Inter'] text-sm text-gray-600 mb-4">
                     {service.description}
                   </p>
 
                   {/* Duration */}
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-6">
                     <Clock className="w-4 h-4 text-[#C75C6F]" />
                     <span className="font-['Inter'] text-sm text-gray-600">{service.duration}</span>
                   </div>
 
-                  {/* Price */}
-                  <div className="font-['Playfair_Display'] font-bold text-2xl bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent mb-4">
-                    {service.price}
-                  </div>
-
-                  {/* Book Button */}
+                  {/* WhatsApp Button */}
                   <Button
-                    onClick={scrollToBooking}
+                    onClick={() => window.open(`https://wa.me/254700000000?text=${encodeURIComponent(service.whatsappMessage)}`, '_blank')}
                     className="w-full bg-gradient-to-r from-[#C75C6F] to-[#D4A373] hover:from-[#D4A373] hover:to-[#C75C6F] text-white rounded-full shadow-lg group-hover:shadow-xl transition-all"
                   >
-                    Book Now
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Book via WhatsApp
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
@@ -149,17 +170,18 @@ export function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-12"
         >
           <p className="font-['Inter'] text-gray-600 mb-4">
-            Can't find what you're looking for?
+            Not sure which service is right for you?
           </p>
           <Button
-            onClick={() => window.open('https://wa.me/254700000000', '_blank')}
+            onClick={() => window.open('https://wa.me/254700000000?text=Hi! I need help choosing the right service for me', '_blank')}
             className="bg-white hover:bg-gray-50 text-gray-800 rounded-full px-8 shadow-xl border border-gray-200"
           >
-            Contact Us for Custom Packages
+            <MessageCircle className="w-4 h-4 mr-2" />
+            Chat with Us for Advice
           </Button>
         </motion.div>
       </div>

@@ -41,20 +41,23 @@ export function Footer() {
               </div>
               <div>
                 <h3 className="font-['Playfair_Display'] font-bold text-2xl">
-                  Nairobi Glam Lounge
+                  Pit Glam
                 </h3>
               </div>
             </div>
-            <p className="font-['Inter'] text-white/90 mb-6 max-w-md">
-              Your premier destination for luxury beauty experiences in Nairobi. We specialize in makeup, hair, nails, and bridal services crafted for the modern African woman.
+            <p className="font-['Inter'] text-white/90 mb-4 max-w-md font-['Playfair_Display'] text-lg italic">
+              Because your Brows & Lashes Matter
             </p>
-            
+            <p className="font-['Inter'] text-white/90 mb-6 max-w-md">
+              Your premier destination for expert lash extensions, brow shaping, and eye-enhancing treatments. Precision, artistry, and beauty in every service.
+            </p>
+
             {/* Social Media */}
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
-                  href={social.href}
+                  href={social.href.replace('nairobiglam', 'pitglam')}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
@@ -91,11 +94,12 @@ export function Footer() {
               Our Services
             </h4>
             <ul className="font-['Inter'] text-white/90 space-y-2">
-              <li>Makeup & Glam</li>
-              <li>Hair Styling</li>
-              <li>Nail Art</li>
-              <li>Bridal Packages</li>
-              <li>Facials & Skincare</li>
+              <li>Classic Lashes</li>
+              <li>Volume Lashes</li>
+              <li>Hybrid Lashes</li>
+              <li>Brow Shaping</li>
+              <li>Lash Lift & Tint</li>
+              <li>Brow Lamination</li>
             </ul>
           </div>
         </div>
@@ -104,12 +108,12 @@ export function Footer() {
         <div className="pt-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="font-['Inter'] text-white/80 text-sm text-center md:text-left">
-              © 2026 Nairobi Glam Lounge. Designed with elegance in Kenya.
+              © 2026 Pit Glam. Where Brows & Lashes Come Alive.
             </p>
             <div className="flex items-center gap-2 text-white/80 text-sm">
-              <span className="font-['Inter']">Made with</span>
+              <span className="font-['Inter']">Crafted with</span>
               <Heart className="w-4 h-4 fill-white/80" />
-              <span className="font-['Inter']">in Nairobi</span>
+              <span className="font-['Inter']">for Beauty</span>
             </div>
           </div>
         </div>

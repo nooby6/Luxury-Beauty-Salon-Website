@@ -8,12 +8,12 @@ interface GalleryProps {
 
 export function Gallery({ galleryImages }: GalleryProps) {
   const galleryItems = [
-    { image: galleryImages[0], category: 'Makeup', title: 'Glam Transformation' },
-    { image: galleryImages[1], category: 'Nails', title: 'Nail Art Design' },
-    { image: galleryImages[2], category: 'Hair', title: 'Hair Styling' },
-    { image: galleryImages[3], category: 'Bridal', title: 'Bridal Glam' },
-    { image: galleryImages[4], category: 'Facial', title: 'Skincare Treatment' },
-    { image: galleryImages[5], category: 'Salon', title: 'Luxury Ambiance' },
+    { image: galleryImages[0], category: 'Volume Lashes', title: 'Dramatic Volume' },
+    { image: galleryImages[1], category: 'Classic Lashes', title: 'Natural Elegance' },
+    { image: galleryImages[2], category: 'Hybrid Lashes', title: 'Perfect Blend' },
+    { image: galleryImages[3], category: 'Brow Shaping', title: 'Sculpted Brows' },
+    { image: galleryImages[4], category: 'Lash Lift', title: 'Lifted & Curled' },
+    { image: galleryImages[5], category: 'Brow Tinting', title: 'Defined & Bold' },
   ];
 
   return (
@@ -37,13 +37,13 @@ export function Gallery({ galleryImages }: GalleryProps) {
           </div>
           <h2 className="font-['Playfair_Display'] font-bold text-4xl sm:text-5xl lg:text-6xl mb-4">
             <span className="bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-              Beauty Gallery
+              Our Work
             </span>
             <br />
-            <span className="text-gray-800">Transformations</span>
+            <span className="text-gray-800">Gallery</span>
           </h2>
           <p className="font-['Inter'] text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our portfolio of stunning beauty transformations
+            Explore our portfolio of beautiful lash and brow transformations
           </p>
         </motion.div>
 
@@ -59,11 +59,16 @@ export function Gallery({ galleryImages }: GalleryProps) {
               {galleryItems.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ scale: 1.05, y: -8 }}
                   className="group relative cursor-pointer"
                 >
                   <div className="relative rounded-[24px] overflow-hidden shadow-xl hover:shadow-2xl transition-all">
@@ -96,32 +101,41 @@ export function Gallery({ galleryImages }: GalleryProps) {
 
         {/* Instagram CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
           className="text-center mt-16"
         >
-          <div className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-[28px] bg-white/90 backdrop-blur-xl shadow-xl border border-white/50">
-            <Instagram className="w-12 h-12 text-[#C75C6F]" />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-[28px] bg-white/90 backdrop-blur-xl shadow-xl border border-white/50"
+          >
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            >
+              <Instagram className="w-12 h-12 text-[#C75C6F]" />
+            </motion.div>
             <div>
               <h3 className="font-['Playfair_Display'] font-bold text-2xl text-gray-800 mb-2">
                 Follow Us on Instagram
               </h3>
               <p className="font-['Inter'] text-gray-600 mb-4">
-                Stay updated with our latest work and beauty tips
+                See more of our lash & brow transformations daily
               </p>
               <a
-                href="https://instagram.com/nairobiglam"
+                href="https://instagram.com/pitglam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#C75C6F] to-[#D4A373] hover:from-[#D4A373] hover:to-[#C75C6F] text-white font-['Inter'] font-medium shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#C75C6F] to-[#D4A373] hover:from-[#D4A373] hover:to-[#C75C6F] text-white font-['Inter'] font-medium shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
                 <Instagram className="w-5 h-5" />
-                @nairobiglam
+                @pitglam
               </a>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

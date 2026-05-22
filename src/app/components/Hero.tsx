@@ -63,7 +63,7 @@ export function Hero({ heroImage }: HeroProps) {
           >
             <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#C75C6F] to-[#D4A373] animate-pulse" />
             <span className="font-['Inter'] text-sm font-medium text-gray-700">
-              Nairobi's Premier Beauty Destination
+              Premium Brows & Lashes Studio
             </span>
           </motion.div>
 
@@ -75,10 +75,8 @@ export function Hero({ heroImage }: HeroProps) {
             className="font-['Playfair_Display'] font-bold text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight"
           >
             <span className="bg-gradient-to-r from-[#C75C6F] via-[#E8A9A9] to-[#D4A373] bg-clip-text text-transparent">
-              Kenyan Beauty,
+              Pit Glam
             </span>
-            <br />
-            <span className="text-gray-800">Redefined</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -86,9 +84,9 @@ export function Hero({ heroImage }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="font-['Inter'] text-lg sm:text-xl text-gray-700 mb-8 max-w-xl mx-auto lg:mx-0"
+            className="font-['Playfair_Display'] text-2xl sm:text-3xl text-gray-800 mb-8 max-w-xl mx-auto lg:mx-0 italic"
           >
-            Luxury beauty experiences in Nairobi crafted for the modern African woman.
+            Because your Brows & Lashes Matter
           </motion.p>
 
           {/* CTA Buttons */}
@@ -123,21 +121,21 @@ export function Hero({ heroImage }: HeroProps) {
           >
             <div>
               <div className="font-['Playfair_Display'] font-bold text-3xl bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-                8+
+                5+
               </div>
               <div className="font-['Inter'] text-sm text-gray-600">Years Experience</div>
             </div>
             <div>
               <div className="font-['Playfair_Display'] font-bold text-3xl bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-                10k+
+                2k+
               </div>
               <div className="font-['Inter'] text-sm text-gray-600">Happy Clients</div>
             </div>
             <div>
               <div className="font-['Playfair_Display'] font-bold text-3xl bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent">
-                500+
+                100%
               </div>
-              <div className="font-['Inter'] text-sm text-gray-600">Bridal Sessions</div>
+              <div className="font-['Inter'] text-sm text-gray-600">Satisfaction</div>
             </div>
           </motion.div>
         </motion.div>
@@ -158,7 +156,7 @@ export function Hero({ heroImage }: HeroProps) {
             <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
               <img
                 src={heroImage}
-                alt="Kenyan Beauty Model"
+                alt="Beautiful Lash Extensions at Pit Glam"
                 className="w-full h-[600px] object-cover"
               />
               {/* Gradient Overlay */}
@@ -183,10 +181,10 @@ export function Hero({ heroImage }: HeroProps) {
                 </div>
                 <div>
                   <div className="font-['Playfair_Display'] font-bold text-gray-800">
-                    Premium Experience
+                    Expert Lash & Brow Artist
                   </div>
                   <div className="font-['Inter'] text-sm text-gray-600">
-                    Luxury treatments for the modern woman
+                    Precision, artistry, and beauty
                   </div>
                 </div>
               </div>
