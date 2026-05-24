@@ -25,7 +25,7 @@ export function Testimonials({ testimonialImages }: TestimonialsProps) {
       role: 'Entrepreneur',
       image: testimonialImages[0],
       rating: 5,
-      text: 'Nairobi Glam Lounge is my go-to beauty destination! The bridal package was absolutely stunning. Every detail was perfect, and I felt like a queen on my special day.',
+      text: 'Pit Glam is my go-to beauty destination! The bridal package was absolutely stunning. Every detail was perfect, and I felt like a queen on my special day.',
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ export function Testimonials({ testimonialImages }: TestimonialsProps) {
       role: 'Corporate Executive',
       image: testimonialImages[2],
       rating: 5,
-      text: 'I trust Nairobi Glam Lounge with all my beauty needs. From nails to hair, everything is top-tier. The attention to detail and customer service is unmatched!',
+      text: 'I trust Pit Glam with all my beauty needs. From nails to hair, everything is top-tier. The attention to detail and customer service is unmatched!',
     },
   ];
 

@@ -1,4 +1,4 @@
 
-  # Luxury Beauty Salon Website
+  # Pit Glam Brows and Lashes Website
 
-  This is a code bundle for Luxury Beauty Salon Website.
+  This is a code bundle for Pit Glam Brows and Lashes Website.

@@ -51,10 +51,10 @@ export function LoadingScreen() {
               transition={{ delay: 0.3 }}
             >
               <h1 className="font-['Playfair_Display'] font-bold text-4xl bg-gradient-to-r from-[#C75C6F] to-[#D4A373] bg-clip-text text-transparent mb-2">
-                Nairobi Glam Lounge
+                Pit Glam Brows & Lashes
               </h1>
               <p className="font-['Inter'] text-gray-700">
-                Luxury Beauty Experiences
+                Premium Brows & Lashes
               </p>
             </motion.div>
 
