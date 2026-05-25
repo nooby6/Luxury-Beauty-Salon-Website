@@ -125,6 +125,8 @@ export const ProductCard = ({
   };
   translate: MotionValue<number>;
 }) => {
+  const isExternalLink = /^https?:\/\//.test(product.link);
+
   return (
     <motion.div
       style={{
@@ -137,8 +139,8 @@ export const ProductCard = ({
     >
       <a
         href={product.link}
-        target="_blank"
-        rel="noreferrer"
+        target={isExternalLink ? "_blank" : undefined}
+        rel={isExternalLink ? "noreferrer" : undefined}
         className="block h-full w-full group-hover/product:shadow-2xl"
       >
         <img
