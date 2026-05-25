@@ -4,6 +4,7 @@ import { About } from './components/About';
 import { Services } from './components/Services';
 import { Booking } from './components/Booking';
 import { Testimonials } from './components/Testimonials';
+import { HeroParallaxDemo } from './components/HeroParallaxDemo';
 import { Gallery } from './components/Gallery';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -80,6 +81,7 @@ export default function App() {
       <Services />
       <Booking />
       <Testimonials testimonialImages={testimonialImages} />
+      <HeroParallaxDemo />
       <Gallery galleryImages={galleryImages} />
       <Contact />
       <Footer />
